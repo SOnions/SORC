@@ -1,2 +1,9 @@
+ifeq ($(OS),Windows_NT)
+	CLOPTIONS := -lws2_32
+else
+	CLOPTIONS := 
+endif
+
+
 all:
-	g++ src/*.cpp -lws2_32 -o Debug/SORC.exe
+	g++ src/*.cpp $(CLOPTIONS) -o Debug/SORC.exe
